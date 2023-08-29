@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 40816869880443511}
   - component: {fileID: 4837204702631222052}
   - component: {fileID: 1686895029546643284}
-  - component: {fileID: 6971637937889179533}
-  m_Layer: 0
+  - component: {fileID: -3270790210153903542}
+  - component: {fileID: 8684390570432876761}
+  m_Layer: 3
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,8 +114,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6971637937889179533
-CircleCollider2D:
+--- !u!114 &-3270790210153903542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237843321946821905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c116a34d293230e409d21bad9d4a708d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMoving: 0
+  MovementDirection: {x: 0, y: 0}
+  MovementSpeed: 1
+--- !u!70 &8684390570432876761
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,5 +162,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
+  m_Size: {x: 1.2, y: 2.1}
+  m_Direction: 0
