@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathZoneTriggerController : GoblinMovementController
+public class DeathZoneTriggerController : MovementController
 {
     private SpawnMaster spawnMaster;
 
@@ -11,8 +11,9 @@ public class DeathZoneTriggerController : GoblinMovementController
         this.spawnMaster = FindObjectOfType<SpawnMaster>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void OnTrigger(GoblinMovementController goblin)
     {
-         //GoblinMovementController controller = 
+        goblin.StopWalking();
+        this.spawnMaster.KillGoblin(goblin.gameObject);
     }
 }

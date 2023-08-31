@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7406645687238553055}
   - component: {fileID: 8353535218905075087}
   - component: {fileID: 5512643750346668906}
+  - component: {fileID: 2159885374018710047}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -88,5 +89,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8778effd6be73041a8cb2831c046189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnAroundOnTriggerEnter: 0
+  startMovementOnTriggerEnter: 0
+  stopMovementOnTriggerEnter: 0
+  newMovementDirectionOnTriggerEnter: {x: 0, y: 0}
+  turnAroundOnCollisionEnter: 0
+  startMovementOnCollisionEnter: 0
+  stopMovementOnCollisionEnter: 0
+  newMovementDirectionOnCollisionEnter: {x: 0, y: 0}
+--- !u!114 &2159885374018710047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210099353091680890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fa2798ddb1ca943b4feeb56067068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
