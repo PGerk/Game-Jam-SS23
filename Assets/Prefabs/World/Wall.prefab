@@ -13,6 +13,10 @@ PrefabInstance:
       value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 5880196251103790506, guid: 3a76cee658ac7b244857b7b4acea7650, type: 3}
+      propertyPath: turnAroundOnCollisionEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880196251103790506, guid: 3a76cee658ac7b244857b7b4acea7650, type: 3}
       propertyPath: invertXMovementOnTriggerEnter
       value: 1
       objectReference: {fileID: 0}
