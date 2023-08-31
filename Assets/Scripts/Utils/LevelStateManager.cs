@@ -7,15 +7,12 @@ using UnityEngine;
 
 public class LevelStateManager : MonoBehaviour
 {
-    public List<Level> Level;
+    public HashSet<Level> Level;
     public Level ActiveLevel;
-}
 
-[Serializable]
-public class Level
-{
-    public string LevelName;
-    public Sprite LevelPreShow;
-    public bool LevelCompleted;
+    private void Awake()
+    {
+        this.Level = new HashSet<Level>();
+    }
 }
 
