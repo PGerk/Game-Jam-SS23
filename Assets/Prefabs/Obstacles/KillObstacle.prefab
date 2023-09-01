@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc9180ba1d983d45960e95b4b0c95c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goblinPrefab: {fileID: 3237843321946821905, guid: aa6a86f969fdf6c4a9edd2f8b6b5f4c8, type: 3}
+  onlyDestroyGoblins: 1
