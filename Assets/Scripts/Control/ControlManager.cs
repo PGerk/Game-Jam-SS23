@@ -7,7 +7,8 @@ public class ControlManager : MonoBehaviour
     private GameObject currentObject, selectedObject;
 
     [Tooltip("Do not use more than 10 Items. The rest will be ignored.")]
-    [SerializeField] GameObject[] items;
+    //[SerializeField] GameObject[] items = new GameObject[]{null, null, null, null, null, null, null, null, null, null};
+    [SerializeField] GameObject[] items = new GameObject[10];
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,11 @@ public class ControlManager : MonoBehaviour
             DrawOnMousePosition();
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            RotateObject(currentObject);
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
             PlaceCurrentObject();
@@ -96,4 +102,8 @@ public class ControlManager : MonoBehaviour
         return mousePos;
     }
     
+    private void RotateObject(GameObject _obj)
+    {
+        _obj.transform.Rotate(new Vector3(0f, 0f, 0.15f));
+    }
 }
