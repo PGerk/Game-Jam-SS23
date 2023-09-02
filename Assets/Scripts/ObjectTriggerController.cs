@@ -11,6 +11,5 @@ public class ObjectTriggerController : ObjectBaseInteractionController
             return;
 
         this.movementController.OnTrigger(goblinMovementController);
-
     }
 }
