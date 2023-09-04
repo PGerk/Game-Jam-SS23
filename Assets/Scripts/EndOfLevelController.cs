@@ -10,7 +10,8 @@ public class EndOfLevelController : MonoBehaviour
 
     public void OnWin()
     {
-        MasterObject.instance.levelStateManager.ActiveLevel.LevelCompleted = true;
+        if (MasterObject.instance?.levelStateManager?.ActiveLevel is not null)
+            MasterObject.instance.levelStateManager.ActiveLevel.LevelCompleted = true;
         this.textMeshProUGUI.text = "Congrats!!! You won the Level";
         this.EndLevel();
     }
@@ -23,6 +24,7 @@ public class EndOfLevelController : MonoBehaviour
 
     public void OnClickMainMenu()
     {
+        Debug.Log("Return to MainMenu");
         Time.timeScale = 1;
         MasterObject.instance.sceneLoader.LoadMainMenu();
     }
@@ -32,5 +34,13 @@ public class EndOfLevelController : MonoBehaviour
         Time.timeScale = 0;
         this.controlManager.DeactivateControls();
         this.gameObject.SetActive(true);
+        StartCoroutine(EndGame());
+    }
+
+    IEnumerator EndGame()
+    {
+        Debug.Log("Return to Main Menu in five Seconds");
+        yield return new WaitForSecondsRealtime(5);
+        this.OnClickMainMenu();
     }
 }
