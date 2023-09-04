@@ -6,6 +6,8 @@ using UnityEngine;
 public class EndOfLevelController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] ControlManager controlManager;
+
     public void OnWin()
     {
         MasterObject.instance.levelStateManager.ActiveLevel.LevelCompleted = true;
@@ -28,6 +30,7 @@ public class EndOfLevelController : MonoBehaviour
     private void EndLevel()
     {
         Time.timeScale = 0;
+        this.controlManager.DeactivateControls();
         this.gameObject.SetActive(true);
     }
 }
