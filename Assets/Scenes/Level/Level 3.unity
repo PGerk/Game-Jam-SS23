@@ -1553,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3473998860109481278, guid: 50bb0a7196481d547a8d445c33d51f66, type: 3}
       propertyPath: turnAroundOnCollisionEnter
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6584325279963911085, guid: 50bb0a7196481d547a8d445c33d51f66, type: 3}
       propertyPath: m_FlipX
