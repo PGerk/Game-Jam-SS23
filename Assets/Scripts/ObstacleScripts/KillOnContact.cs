@@ -5,7 +5,7 @@ using UnityEngine;
 public class KillOnContact : MonoBehaviour
 {
 
-    [SerializeField] GameObject goblinPrefab;
+    [SerializeField] bool onlyDestroyGoblins;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,11 @@ public class KillOnContact : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetType() == goblinPrefab.GetType())
+        if (collision.gameObject.layer != 3 && onlyDestroyGoblins)
+        {
+            return;
+        }
+        else
         {
             Destroy(collision.gameObject);
         }
