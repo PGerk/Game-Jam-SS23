@@ -10,17 +10,28 @@ public class LevelController : MonoBehaviour
     public int DiedGoblins = 0;
     public int SurvivedGoblins = 0;
     public int AliveGoblins = 0;
+    private bool gameEnded = false;
+    private EndOfLevelController endOfLevelController;
+
+    private void Awake()
+    {
+        this.endOfLevelController = FindObjectOfType<EndOfLevelController>(true);
+        if (this.endOfLevelController is null)
+            throw new ArgumentException("endofLevelController is missing");
+    }
 
     private void Update()
     {
-        if (SurvivedGoblins >= GoblinsNeedToSurvive)
+        if (SurvivedGoblins >= GoblinsNeedToSurvive && !gameEnded)
         {
             this.OnWin();
+            gameEnded = true;
             return;
         }
-        if ((GoblinsTotalInLevel - DiedGoblins) < GoblinsNeedToSurvive)
+        if ((GoblinsTotalInLevel - DiedGoblins) < GoblinsNeedToSurvive && !gameEnded)
         {
             this.OnDeath();
+            gameEnded = true;
             return;
         }
     }
@@ -28,11 +39,13 @@ public class LevelController : MonoBehaviour
     public void OnWin()
     {
         Debug.Log("Yeah Win");
+        this.endOfLevelController.OnWin();
     }
 
     public void OnDeath()
     {
         Debug.Log("No You Die");
+        this.endOfLevelController.OnLose();
     }
 
 }
