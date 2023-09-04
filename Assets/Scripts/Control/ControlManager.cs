@@ -70,17 +70,20 @@ public class ControlManager : MonoBehaviour
             DrawOnMousePosition();
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            RotateObject(currentObject);
-        }
-
         if (Input.GetMouseButtonUp(0))
         {
             PlaceCurrentObject();
         }
 
 
+    }
+
+    private void FixedUpdate()
+    {
+    if (Input.GetMouseButton(1))
+    {
+        RotateObject(currentObject);
+    }
     }
 
     private void DrawOnMousePosition()
@@ -104,6 +107,6 @@ public class ControlManager : MonoBehaviour
     
     private void RotateObject(GameObject _obj)
     {
-        _obj.transform.Rotate(new Vector3(0f, 0f, 0.15f));
+        _obj.transform.Rotate(new Vector3(0f, 0f, 3f));
     }
 }
