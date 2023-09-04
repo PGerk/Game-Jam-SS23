@@ -36,7 +36,7 @@ public class GoblinMovementController : MonoBehaviour
     public void TurnAround()
     {
         Quaternion currentRotation = this.gameObject.transform.rotation;
-        currentRotation.y = (currentRotation.y + 180) % 360;
+        currentRotation *= Quaternion.Euler(Vector3.up * 180);
         this.gameObject.transform.rotation = currentRotation;
     }
 }
