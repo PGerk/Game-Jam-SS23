@@ -80,10 +80,10 @@ public class ControlManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-    if (Input.GetMouseButton(1))
-    {
-        RotateObject(currentObject);
-    }
+        if (Input.GetMouseButton(1) && currentObject != null)
+        {
+            RotateObject(currentObject);
+        }
     }
 
     private void DrawOnMousePosition()
